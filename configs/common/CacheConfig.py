@@ -52,6 +52,13 @@ def _get_hwp(hwp_option):
     hwpClass = ObjectList.hwp_list.get(hwp_option)
     return hwpClass()
 
+def _get_rp(rp_option):
+    if rp_option == None:
+        return NULL
+
+    rpClass = ObjectList.rp_list.get(rp_option)
+    return rpClass()
+
 def _get_cache_opts(level, options):
     opts = {}
 
@@ -66,6 +73,10 @@ def _get_cache_opts(level, options):
     prefetcher_attr = '{}_hwp_type'.format(level)
     if hasattr(options, prefetcher_attr):
         opts['prefetcher'] = _get_hwp(getattr(options, prefetcher_attr))
+
+    replacement_policy_attr = '{}_rp_type'.format(level)
+    if hasattr(options, replacement_policy_attr):
+        opts['replacement_policy'] = _get_rp(getattr(options, replacement_policy_attr))
 
     return opts
 
@@ -133,6 +144,7 @@ def config_cache(options, system):
             icache = icache_class(**_get_cache_opts('l1i', options))
             dcache = dcache_class(**_get_cache_opts('l1d', options))
 
+            print(dcache.replacement_policy)
             # If we have a walker cache specified, instantiate two
             # instances here
             if walk_cache_class:

@@ -213,6 +213,27 @@ def addCommonOptions(parser):
                         action=ListRP, nargs=0,
                         help="List available replacement policy types")
 
+    parser.add_argument("--l1i-rp-type", default="LRURP",
+                        choices=ObjectList.rp_list.get_names(),
+                        help = """
+                        type of replacement policy to use with the L1
+                        instruction cache.
+                        (if not set, use the default replacement policy of
+                        the selected cache)""")
+    parser.add_argument("--l1d-rp-type", default="LRURP",
+                        choices=ObjectList.rp_list.get_names(),
+                        help = """
+                        type of replacement policy to use with the L1
+                        data cache.
+                        (if not set, use the default replacement policy of
+                        the selected cache)""")
+    parser.add_argument("--l2-rp-type", default="LRURP",
+                        choices=ObjectList.rp_list.get_names(),
+                        help = """
+                        type of replacement policy to use with the L2 cache.
+                        (if not set, use the default replacement policy of
+                        the selected cache)""")  
+
     parser.add_argument("--list-hwp-types",
                         action=ListHWP, nargs=0,
                         help="List available hardware prefetcher types")
