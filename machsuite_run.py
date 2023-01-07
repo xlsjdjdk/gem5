@@ -6,7 +6,7 @@ cpu_model_list = ['MinorCPU', 'O3CPU']
 
 l1d_size_list = ['1kB','2kB','4kB','8kB','16kB']
 
-test_prog = 'viterbi'
+test_prog = 'sort_merge'
 
 result_base_path = 'results/'
 
