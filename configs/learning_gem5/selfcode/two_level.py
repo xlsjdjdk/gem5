@@ -39,7 +39,7 @@ else:
     system.mem_ranges = [AddrRange(options.mem_size)]
 
 if not options or not options.cpu_model:
-    system.cpu = MinorCPU()
+    system.cpu = TimingSimpleCPU()
 else:
     try:
         system.cpu = eval(options.cpu_model+'()')

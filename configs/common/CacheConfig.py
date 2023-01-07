@@ -144,7 +144,6 @@ def config_cache(options, system):
             icache = icache_class(**_get_cache_opts('l1i', options))
             dcache = dcache_class(**_get_cache_opts('l1d', options))
 
-            print(dcache.replacement_policy)
             # If we have a walker cache specified, instantiate two
             # instances here
             if walk_cache_class:

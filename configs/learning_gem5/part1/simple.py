@@ -88,7 +88,7 @@ isa = str(m5.defines.buildEnv['TARGET_ISA']).lower()
 # grab the specific path to the binary
 thispath = os.path.dirname(os.path.realpath(__file__))
 binary = os.path.join(thispath, '../../../',
-                      'tests/test-progs/hello/bin/', isa, 'linux/hello')
+                      'tests/test-progs/selftest/bin/', isa, 'test_cpp')
 
 system.workload = SEWorkload.init_compatible(binary)
 
