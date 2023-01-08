@@ -4,8 +4,149 @@ gem5 is copyrighted software; use the --copyright option for details.
 
 gem5 version 21.2.1.1
 gem5 compiled Dec 31 2022 15:16:12
-gem5 started Jan  8 2023 15:51:58
-gem5 executing on sjtu204, pid 1731904
-command line: build/ARM/gem5.opt configs/example/se.py --cmd=tests/test-progs/selftest/bin/arm/generalgemm '--options=tests/test-progs/selftest/src/a_ge.data tests/test-progs/selftest/src/b_ge.data tests/test-progs/selftest/src/c_ge.data' --cpu-type=O3CPU --caches --l1d_size=4kB
+gem5 started Jan  8 2023 18:46:16
+gem5 executing on sjtu204, pid 1756610
+command line: build/ARM/gem5.opt configs/example/se.py --cmd=tests/test-progs/selftest/bin/arm/generalgemm '--options=tests/test-progs/selftest/src/a_ge.data tests/test-progs/selftest/src/b_ge.data tests/test-progs/selftest/src/c_ge.data' --cpu-type=O3CPU --caches --l1d_size=32kB
 
 **** REAL SIMULATION ****
+Exiting @ tick 51198708500 because exiting with last active thread context
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 21.2.1.1
+gem5 compiled Dec 31 2022 15:16:12
+gem5 started Jan  8 2023 18:49:27
+gem5 executing on sjtu204, pid 1757006
+command line: build/ARM/gem5.opt configs/example/se.py --cmd=tests/test-progs/selftest/bin/arm/sparsegemm '--options=tests/test-progs/selftest/src/a_sp.data tests/test-progs/selftest/src/b_sp.data tests/test-progs/selftest/src/c_sp.data' --cpu-type=O3CPU --caches --l1d_size=32kB
+
+**** REAL SIMULATION ****
+Exiting @ tick 10490945500 because exiting with last active thread context
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 21.2.1.1
+gem5 compiled Dec 31 2022 15:16:12
+gem5 started Jan  8 2023 18:50:23
+gem5 executing on sjtu204, pid 1757112
+command line: build/ARM/gem5.opt configs/example/se.py --cmd=tests/test-progs/selftest/bin/arm/sparsegemm_new '--options=tests/test-progs/selftest/src/a_ge.data tests/test-progs/selftest/src/b_ge.data tests/test-progs/selftest/src/c_sp_new.data' --cpu-type=O3CPU --caches --l1d_size=32kB
+
+**** REAL SIMULATION ****
+Exiting @ tick 15833466500 because exiting with last active thread context
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 21.2.1.1
+gem5 compiled Dec 31 2022 15:16:12
+gem5 started Jan  8 2023 18:52:08
+gem5 executing on sjtu204, pid 1757367
+command line: build/ARM/gem5.opt configs/example/se.py --cmd=tests/test-progs/selftest/bin/arm/generalgemm '--options=tests/test-progs/selftest/src/a_ge.data tests/test-progs/selftest/src/b_ge.data tests/test-progs/selftest/src/c_ge.data' --cpu-type=O3CPU --caches --l1d_size=32kB
+
+**** REAL SIMULATION ****
+Exiting @ tick 53862344500 because exiting with last active thread context
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 21.2.1.1
+gem5 compiled Dec 31 2022 15:16:12
+gem5 started Jan  8 2023 18:56:33
+gem5 executing on sjtu204, pid 1757808
+command line: build/ARM/gem5.opt configs/example/se.py --cmd=tests/test-progs/selftest/bin/arm/sparsegemm '--options=tests/test-progs/selftest/src/a_sp.data tests/test-progs/selftest/src/b_sp.data tests/test-progs/selftest/src/c_sp.data' --cpu-type=O3CPU --caches --l1d_size=32kB
+
+**** REAL SIMULATION ****
+Exiting @ tick 15412656500 because exiting with last active thread context
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 21.2.1.1
+gem5 compiled Dec 31 2022 15:16:12
+gem5 started Jan  8 2023 18:57:56
+gem5 executing on sjtu204, pid 1757984
+command line: build/ARM/gem5.opt configs/example/se.py --cmd=tests/test-progs/selftest/bin/arm/sparsegemm_new '--options=tests/test-progs/selftest/src/a_ge.data tests/test-progs/selftest/src/b_ge.data tests/test-progs/selftest/src/c_sp_new.data' --cpu-type=O3CPU --caches --l1d_size=32kB
+
+**** REAL SIMULATION ****
+Exiting @ tick 20060657500 because exiting with last active thread context
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 21.2.1.1
+gem5 compiled Dec 31 2022 15:16:12
+gem5 started Jan  8 2023 19:00:07
+gem5 executing on sjtu204, pid 1758235
+command line: build/ARM/gem5.opt configs/example/se.py --cmd=tests/test-progs/selftest/bin/arm/generalgemm '--options=tests/test-progs/selftest/src/a_ge.data tests/test-progs/selftest/src/b_ge.data tests/test-progs/selftest/src/c_ge.data' --cpu-type=O3CPU --caches --l1d_size=32kB
+
+**** REAL SIMULATION ****
+Exiting @ tick 59800120500 because exiting with last active thread context
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 21.2.1.1
+gem5 compiled Dec 31 2022 15:16:12
+gem5 started Jan  8 2023 19:03:58
+gem5 executing on sjtu204, pid 1758684
+command line: build/ARM/gem5.opt configs/example/se.py --cmd=tests/test-progs/selftest/bin/arm/sparsegemm '--options=tests/test-progs/selftest/src/a_sp.data tests/test-progs/selftest/src/b_sp.data tests/test-progs/selftest/src/c_sp.data' --cpu-type=O3CPU --caches --l1d_size=32kB
+
+**** REAL SIMULATION ****
+Exiting @ tick 30533152500 because exiting with last active thread context
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 21.2.1.1
+gem5 compiled Dec 31 2022 15:16:12
+gem5 started Jan  8 2023 19:07:35
+gem5 executing on sjtu204, pid 1759059
+command line: build/ARM/gem5.opt configs/example/se.py --cmd=tests/test-progs/selftest/bin/arm/sparsegemm_new '--options=tests/test-progs/selftest/src/a_ge.data tests/test-progs/selftest/src/b_ge.data tests/test-progs/selftest/src/c_sp_new.data' --cpu-type=O3CPU --caches --l1d_size=32kB
+
+**** REAL SIMULATION ****
+Exiting @ tick 33393118500 because exiting with last active thread context
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 21.2.1.1
+gem5 compiled Dec 31 2022 15:16:12
+gem5 started Jan  8 2023 19:12:28
+gem5 executing on sjtu204, pid 1759757
+command line: build/ARM/gem5.opt configs/example/se.py --cmd=tests/test-progs/selftest/bin/arm/generalgemm '--options=tests/test-progs/selftest/src/a_ge.data tests/test-progs/selftest/src/b_ge.data tests/test-progs/selftest/src/c_ge.data' --cpu-type=O3CPU --caches --l1d_size=32kB
+
+**** REAL SIMULATION ****
+Exiting @ tick 64689761500 because exiting with last active thread context
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 21.2.1.1
+gem5 compiled Dec 31 2022 15:16:12
+gem5 started Jan  8 2023 19:16:42
+gem5 executing on sjtu204, pid 1760356
+command line: build/ARM/gem5.opt configs/example/se.py --cmd=tests/test-progs/selftest/bin/arm/sparsegemm '--options=tests/test-progs/selftest/src/a_sp.data tests/test-progs/selftest/src/b_sp.data tests/test-progs/selftest/src/c_sp.data' --cpu-type=O3CPU --caches --l1d_size=32kB
+
+**** REAL SIMULATION ****
+Exiting @ tick 125399520500 because exiting with last active thread context
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 21.2.1.1
+gem5 compiled Dec 31 2022 15:16:12
+gem5 started Jan  8 2023 19:24:04
+gem5 executing on sjtu204, pid 1761461
+command line: build/ARM/gem5.opt configs/example/se.py --cmd=tests/test-progs/selftest/bin/arm/sparsegemm_new '--options=tests/test-progs/selftest/src/a_ge.data tests/test-progs/selftest/src/b_ge.data tests/test-progs/selftest/src/c_sp_new.data' --cpu-type=O3CPU --caches --l1d_size=32kB
+
+**** REAL SIMULATION ****
+Exiting @ tick 124488952500 because exiting with last active thread context
+sp_new compute success!0.025
+sp compute success! density=0.025
+sp_new compute success!0.05
+sp compute success! density=0.05
+sp_new compute success!0.1
+sp compute success! density=0.1
+sp_new compute success!0.2
+sp compute success! density=0.2

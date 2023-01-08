@@ -1,15 +1,16 @@
 import os
 
-density_list = ['0.025', '0.05', '0.1', '0.2', '0.4', '0.6', '0.8', '1.0']
+density_list = ['0.025', '0.05', '0.1', '0.2']
 exec_list = ['generalgemm', 'sparsegemm', 'sparsegemm_new']
 l1d_size_list = ['4kB', '16kB', '64kB']
-l1d_size = '4kB'
+l1d_size = '32kB'
 cpu_model = 'O3CPU'
 
 
 for density in density_list:
-    cmd_gen = 'python tests/test-progs/selftest/sp_matrix_gen.py ' + density 
+    cmd_gen = 'python sp_matrix_gen.py ' + density 
     os.system(cmd_gen)
+
     cmd_simu = 'build/ARM/gem5.opt configs/example/se.py'\
                 + ' --cmd=' + 'tests/test-progs/selftest/bin/arm/generalgemm'\
                 + ' --options=' + '\"tests/test-progs/selftest/src/a_ge.data'\
@@ -70,6 +71,6 @@ for density in density_list:
         tests/test-progs/selftest/src/c_sp.data >/dev/null 2>&1'
     return_value = os.system(cmd_diff)
     if return_value != 0:
-        print('sp compute error!' + density)
+        print('sp compute error! density=' + density)
     else:
-        print('sp compute success!' + density)
+        print('sp compute success! density=' + density)
