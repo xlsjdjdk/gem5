@@ -53,12 +53,23 @@ MYOWN::invalidate(const std::shared_ptr<ReplacementData>& replacement_data)
     // Reset insertion tick
     std::static_pointer_cast<MYOWNReplData>(
         replacement_data)->tickInserted = Tick(0);
+        
+    std::static_pointer_cast<MYOWNReplData>(
+        replacement_data)->usetimes = 4096;  
+
+      
 }
 
 void
 MYOWN::touch(const std::shared_ptr<ReplacementData>& replacement_data) const
 {
     // A touch does not modify the insertion tick
+    std::static_pointer_cast<MYOWNReplData>(
+        replacement_data)->tickInserted = curTick();
+
+
+    std::static_pointer_cast<MYOWNReplData>(
+        replacement_data)->usetimes += 1 ;   
 }
 
 void
@@ -67,12 +78,19 @@ MYOWN::reset(const std::shared_ptr<ReplacementData>& replacement_data) const
     // Set insertion tick
     std::static_pointer_cast<MYOWNReplData>(
         replacement_data)->tickInserted = curTick();
+
+    std::static_pointer_cast<MYOWNReplData>(
+        replacement_data)->usetimes = 1 ; 
 }
 
 ReplaceableEntry*
 MYOWN::getVictim(const ReplacementCandidates& candidates) const
 {
     // There must be at least one replacement candidate
+    //32 times 
+    //1024 times
+
+
     assert(candidates.size() > 0);
 
     // Visit all candidates to find victim
@@ -87,7 +105,53 @@ MYOWN::getVictim(const ReplacementCandidates& candidates) const
         }
     }
 
-    return victim;
+    //used 32 times
+    ReplaceableEntry* victim1 = candidates[0];
+    Tick tmp32=288201765000;
+    for (const auto& candidate : candidates) {
+        // Update victim entry if necessary
+        if ((std::static_pointer_cast<MYOWNReplData>(
+                    candidate->replacementData)->tickInserted < tmp32)&&
+            (std::static_pointer_cast<MYOWNReplData>(
+                    candidate->replacementData)->usetimes > 1023 )        
+                    ) {
+            victim1 = candidate;
+            tmp32=std::static_pointer_cast<MYOWNReplData>(
+                    victim1->replacementData)->tickInserted;
+        }
+    } 
+
+    //used 1024 times
+    ReplaceableEntry* victim2 = candidates[0];
+    Tick tmp1024=400201765000;
+    for (const auto& candidate : candidates) {
+        // Update victim entry if necessary
+        if ((std::static_pointer_cast<MYOWNReplData>(
+                    candidate->replacementData)->tickInserted < tmp1024)&&
+            (std::static_pointer_cast<MYOWNReplData>(
+                    candidate->replacementData)->usetimes > 4095 )        
+                    ) {
+            victim2 = candidate;
+            tmp1024=std::static_pointer_cast<MYOWNReplData>(
+                    victim2->replacementData)->tickInserted;
+        }
+    } 
+
+    if (std::static_pointer_cast<MYOWNReplData>(
+                    victim2->replacementData)->usetimes >4095 )
+                    {
+                        return victim2;
+                    }
+    else if (std::static_pointer_cast<MYOWNReplData>(
+                    victim1->replacementData)->usetimes >1023 )
+                    {
+                        return victim1;
+                    }
+    else {
+        return victim;
+    }
+
+    //return victim;
 }
 
 std::shared_ptr<ReplacementData>

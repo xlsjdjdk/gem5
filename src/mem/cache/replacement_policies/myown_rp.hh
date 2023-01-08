@@ -57,11 +57,24 @@ class MYOWN : public Base
         /** Tick on which the entry was inserted. */
         Tick tickInserted;
 
+        int usetimes;
+
         /**
          * Default constructor. Invalidate data.
          */
         MYOWNReplData() : tickInserted(0) {}
     };
+
+    // struct MYOWNUseTimes : UseTimes
+    // {
+    //     /** Tick on which the entry was inserted. */
+    //     int usetimes;
+
+    //     /**
+    //      * Default constructor. Invalidate data.
+    //      */
+    //     MYOWNUseTimes() : usetimes(0) {}
+    // };
 
   public:
     typedef MYOWNRPParams Params;
