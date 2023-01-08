@@ -1,25 +1,34 @@
+import sys
 import numpy as np
 import scipy.sparse as ss
 
 # 生成随机稀疏矩阵
-num_col = 128
 num_row = 128
-sparse_rate = 0.7
-num_ele = int(num_col*num_row*sparse_rate)
-a = [np.random.randint(0,num_row) for _ in range(num_ele)]
-b = [np.random.randint(0,num_col) for _ in range(num_ele-num_col)] + [i for i in range(num_col)]  # 保证每一列都有值，不会出现全零列
-c = [10 * np.random.rand() for _ in range(num_ele)]
-rows, cols, v = np.array(a), np.array(b), np.array(c)
-sparseX = ss.coo_matrix((v,(rows,cols)))
+num_col = 128
+density = float(sys.argv[1])
+
+sparseX = ss.rand(num_col, num_row, density, format='coo', dtype=np.double)*100
 X = sparseX.todense()
 
-np.savetxt(r'src/a.data', X, fmt='%lf', delimiter=' ')
+X_num = np.array([[num_row],[num_col],[sparseX.nnz]]).T
+X_sp = np.array([sparseX.row,sparseX.col,sparseX.data]).T
+# X_sp = X_sp[np.lexsort(X_sp[:,::-1].T)]
 
-a = [np.random.randint(0,num_row) for _ in range(num_ele)]
-b = [np.random.randint(0,num_col) for _ in range(num_ele-num_col)] + [i for i in range(num_col)]  # 保证每一列都有值，不会出现全零列
-c = [10 * np.random.rand() for _ in range(num_ele)]
-rows, cols, v = np.array(a), np.array(b), np.array(c)
-sparseX = ss.coo_matrix((v,(rows,cols)))
+np.savetxt(r'src/a_ge.data', X, fmt='%lf', delimiter=' ')
+np.savetxt(r'src/a_sp.data', X_num, fmt='%d %d %d', delimiter=' ')
+f = open('src/a_sp.data', 'a')
+np.savetxt(f, X_sp, fmt='%d %d %lf', delimiter=' ')
+f.close() 
+
+sparseX = ss.rand(num_col, num_row, density, format='coo', dtype=np.double)*100
 X = sparseX.todense()
 
-np.savetxt(r'src/b.data', X, fmt='%lf', delimiter=' ')
+X_num = np.array([[num_row],[num_col],[sparseX.nnz]]).T
+X_sp = np.array([sparseX.row,sparseX.col,sparseX.data]).T
+# X_sp = X_sp[np.lexsort(X_sp[:,::-1].T)]
+
+np.savetxt(r'src/b_ge.data', X, fmt='%lf', delimiter=' ')
+np.savetxt(r'src/b_sp.data', X_num, fmt='%d %d %d', delimiter=' ')
+f = open('src/b_sp.data', 'a')
+np.savetxt(f, X_sp, fmt='%d %d %lf', delimiter=' ')
+f.close()

@@ -1,0 +1,11 @@
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 21.2.1.1
+gem5 compiled Dec 31 2022 15:16:12
+gem5 started Jan  8 2023 15:51:58
+gem5 executing on sjtu204, pid 1731904
+command line: build/ARM/gem5.opt configs/example/se.py --cmd=tests/test-progs/selftest/bin/arm/generalgemm '--options=tests/test-progs/selftest/src/a_ge.data tests/test-progs/selftest/src/b_ge.data tests/test-progs/selftest/src/c_ge.data' --cpu-type=O3CPU --caches --l1d_size=4kB
+
+**** REAL SIMULATION ****
